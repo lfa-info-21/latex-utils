@@ -22,8 +22,12 @@ String.prototype.smooth = function () {
     while (ei > bi && this[ei] == ' ') {
         ei -= 1
     }
-    if (ei <= bi) {
+    if (ei < bi) {
         return ""
+    }
+
+    if (bi == 0 && ei == this.length - 1) {
+        return this
     }
     return this.substring(bi, ei + 1)
 }
